@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 		if (padding >= min_pad)
 		{
 			const auto rva = reinterpret_cast<uintptr_t>(address) - reinterpret_cast<uintptr_t>(buffer.get());
-			std::cout << "[+] Padding found at rva " << rva << " (" << padding << " bytes long)" << '\n';
+			std::cout << "[+] Padding found at rva " << std::hex << rva << " (" << padding << " bytes long)" << '\n';
 			total_padding_sections++;
 			total_padding += padding;
 		}
@@ -73,4 +73,6 @@ int main(int argc, char *argv[])
 
 	std::cout << "[+] Found a total of " << total_padding_sections << " padding sections, with " << total_padding << " bytes in total." << std::endl;
 	std::cin.get();
+
+	return 0;
 }
