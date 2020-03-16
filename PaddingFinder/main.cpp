@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	
 	if (dos_header->e_magic != IMAGE_DOS_SIGNATURE)
 	{
-		std::cerr << "[!] File is not a valid PE image! (Invalid e_lfanew)" << std::endl;
+		std::cerr << "[!] File is not a valid PE image! (Invalid e_magic)" << std::endl;
 
 		return 1;
 	}
